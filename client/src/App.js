@@ -10,7 +10,11 @@ import Footer from "./components/Footer/Footer";
 import SignUp from "./components/SignUp/SignUp";
 // import Comment from './components/Comment/Comment';
 // import Blog from './components/Blog/Blog';
-import Login from './components/LogIn/LogIn'
+import Login from "./components/LogIn/LogIn";
+import NavBar from "./components/NavBar/NavBar";
+// import Signup from './components/SignUp/SignUp'
+// import Login from './components/LogIn/LogIn'
+//import Signup from './components/SignUp/SignUp'
 
 const client = new ApolloClient({
   uri: "/graphql",
@@ -23,6 +27,9 @@ function App() {
       <Router>
         <div className="flex-column justify-flex-start min-100-vh">
           <Header />
+          <div>
+            <NavBar />
+          </div>
           <div className="container">
             <Routes>
               <Route path="/" element={<Homepage />} />
