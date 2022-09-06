@@ -1,13 +1,14 @@
 import React from 'react';
-
+import "./SingleBlog.css"
 // Import the `useParams()` hook
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
 import CommentList from '../CommentList';
 import CommentForm from '../CommentForm';
-
+import Comment from "../Comment/Comment";
 import { QUERY_SINGLE_BLOG } from '../../utils/queries';
+import { Button } from 'react-bootstrap';
 
 const SingleBlog = () => {
   // Use `useParams()` to retrieve value of the route parameter `:profileId`
@@ -24,6 +25,7 @@ const SingleBlog = () => {
     return <div>Loading...</div>;
   }
   return (
+    
     <div className="my-3">
       <h3 className="card-header bg-dark text-light p-2 m-0">
         {blog.blogAuthor} <br />
@@ -43,6 +45,9 @@ const SingleBlog = () => {
         >
           {blog.blogText}
         </blockquote>
+        <Button>
+          <Comment />
+        </Button>
       </div>
 
       <div className="my-5">

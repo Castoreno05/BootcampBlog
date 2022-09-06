@@ -1,6 +1,13 @@
 import React from "react";
 import "./NavBar.css";
+import Auth from "../../utils/auth";
 
+
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+    
+  }
 function NavBar({ currentPage, handlePageChange }) {
   return (
     <div className="container-nav">
@@ -16,7 +23,7 @@ function NavBar({ currentPage, handlePageChange }) {
       </li>
       <li className="nav nav-tabs bg-dark dashboardTab">
         <a
-          href="#dashboard"
+          href="/dashboard"
           onClick={() => handlePageChange("Dashboard")}
           className={
             currentPage === "Dashboard" ? "nav-link active" : "nav-link"
@@ -42,6 +49,24 @@ function NavBar({ currentPage, handlePageChange }) {
         >
           Sign up
         </a>
+      </li>
+      <li className="nav nav-tabs bg-dark signupTab">
+
+      <button
+      className="btn btn-block btn-dark"
+      style={{ cursor: "pointer" }}
+      type="submit"
+       onClick={logout}
+    >
+      Logout
+    </button>
+        {/* <a
+          href="/SignOut"
+          onClick={() => handlePageChange("SignOut")}
+          className={currentPage === "SignUp" ? "nav-link active" : "nav-link"}
+        >
+          Logout
+        </a> */}
       </li>
     </ul>
     </div>
