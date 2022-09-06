@@ -11,6 +11,7 @@ export default function DashBoard() {
   const deleteBlog = useMutation(DELETE_BLOG);
   const allBlogs = useMutation(QUERY_BLOGS);
   const findBlog = useMutation(QUERY_SINGLE_BLOG);
+  // const searchResults = data.map(blog)
 ;
     return (
     <div>DashBoard
@@ -19,7 +20,7 @@ export default function DashBoard() {
         <div className='card-header'> Search for post</div>
     <div className="search card-body">
     <div class="input-group mb-3">
-    <button class="btn btn-outline-secondary" type="button" onClick={findBlog(formState.blogText)}>Button</button>
+    <button class="btn btn-outline-secondary" type="button" onClick={findBlog(formState.blogText)}>Search</button>
     <input type="text" className="form-control" placeholder="Which post are you looking for?" value={formState.blogText}/>
     </div>
    </div>
@@ -31,6 +32,13 @@ export default function DashBoard() {
     <button className='btn btn-primary' onClick={allBlogs}>Find All</button>
     </div>
 
+      {/* <div className='wrap card'>
+        <h4>Update or Delete Post</h4>
+        {data.map((blog)=>(
+          <div className='results'>{blog}</div>
+        ))}
+
+      </div> */}
 
 </div>
   )};
