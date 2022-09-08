@@ -3,13 +3,14 @@ import { Link } from 'react-router-dom';
 import { Button } from "react-bootstrap"
 import Edit from "../Edit";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPenToSquare} from '@fortawesome/free-solid-svg-icons';
+import { faTrashCan} from '@fortawesome/free-solid-svg-icons';
 import { useMutation } from '@apollo/client';
 import { DELETE_BLOG } from '../../utils/mutations';
-import { QUERY_BLOGS, QUERY_ME } from '../../utils/queries';
+import { QUERY_ME } from '../../utils/queries';
+import "./bloglistuser.css";
 
 const BlogListUser = ({blogs}) => {
-  const [removeBlog, { error }] = useMutation(DELETE_BLOG, {
+  const [removeBlog] = useMutation(DELETE_BLOG, {
     refetchQueries: [{query: QUERY_ME}],
     awaitRefetchQueries: true,
   })
@@ -52,8 +53,7 @@ const BlogListUser = ({blogs}) => {
               <div className='editButtons'>
               <form  onSubmit={(e)=>handleFormSubmit(e,blog._id)}>
               <button className="editBtn" type="submit">
-              {/* <FontAwesomeIcon className="trashCan" icon={faTrashCan}></FontAwesomeIcon> */}
-              Delete
+              <FontAwesomeIcon className="trashCan" icon={faTrashCan}></FontAwesomeIcon> Delete
               </button>
               </form>
               <Edit id={blog._id}/>

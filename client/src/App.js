@@ -12,7 +12,7 @@ import { setContext } from "@apollo/client/link/context";
 import Homepage from "./components/Homepage";
 import SingleBlog from "./components/SingleBlog";
 import DashBoard from "./components/DashBoard";
-import Header from "./components/Header";
+// import Header from "./components/Header";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import SignUp from "./components/SignUp";
@@ -43,12 +43,12 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <div className="header">
-        <Header />
+        {/* <Header /> */}
+        <NavBar />
       </div>
       <div className="appBody">
-        <div className="navBar">
-          <NavBar />
-        </div>
+        {/* <div className="navBar">  
+        </div> */}
         <Router>
           <div className="paths">
           <Routes>
@@ -79,7 +79,7 @@ function App() {
             {/* </div>
             <div className="signout"> */}
               {/* <Routes> */}
-                <Route path="/Logout" element={<Logout />} />
+                <Route path="/logout" element={<Logout />} />
               {/* </Routes> */}
             {/* </div>
             <div className="singleblog"> */}

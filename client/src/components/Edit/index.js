@@ -74,7 +74,7 @@ const handleChange = (event) => {
       {Auth.loggedIn() ? (
         <>
           <button className="editBtn" onClick={handleShow}>
-          <FontAwesomeIcon className="penToSquare" icon={faPenToSquare}></FontAwesomeIcon>
+          <FontAwesomeIcon className="penToSquare" icon={faPenToSquare}></FontAwesomeIcon> Edit
           </button>
           <Modal show={show} id="modal">
             <Modal.Header>
