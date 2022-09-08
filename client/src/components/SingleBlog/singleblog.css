@@ -2,4 +2,11 @@
     width: 50%;
     margin: auto;
 }
+.singleBreak {
+    height: 48px;
+}
+.commentCard {
+    position:relative;
+    left: 2%;
+}
 /* not */

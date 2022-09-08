@@ -47,10 +47,18 @@ const Comment = ({ blogId }) => {
     <div>
       {Auth.loggedIn() ? (
         <>
-          <Button onClick={handleShow} className="btn-dark">Comment</Button>
+          <Button 
+          onClick={handleShow} 
+          className="btn-dark" 
+          style={{borderRadius:"35px", 
+          boxShadow:"0 2px 2px var(#A3A3A3), 0 6px 12px var(#A3A3A3)", 
+          position:"relative", 
+          top:80,
+          fontFamily:"Arial, Helvetica, sans-serif"}}>
+            Comment
+          </Button>
           <Modal show={show} id="modal">
             <Modal.Header>
-              <h5>Comment</h5>
               <Button className="btn-close" onClick={handleClose} style={{backgroundColor: "#212529"}}></Button>
             </Modal.Header>
             <Modal.Body>

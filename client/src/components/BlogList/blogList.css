@@ -4,10 +4,10 @@ a {
 .container-home {
     position: relative;
     top: 45px;
-    
+    left:2%;
 }
 .card {
-    width: 50vw;
+    width: 55vw;
     position: relative;
     margin-top: 30px;
     height: 400px;
