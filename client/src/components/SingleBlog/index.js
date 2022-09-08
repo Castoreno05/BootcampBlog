@@ -22,7 +22,9 @@ const SingleBlog = () => {
     return <div>Loading...</div>;
   }
   return (
-    <div className="card">
+    <div>
+      <div className="singleBreak"></div>
+    <div className="card commentCard">
       <h3 className="card-header bg-dark text-light p-2 m-0">
         {blog.blogAuthor} <br />
         <span style={{ fontSize: "1rem" }}>
@@ -47,6 +49,7 @@ const SingleBlog = () => {
       <div className="my-5">
         <CommentList comments={blog.comments} />
       </div>
+    </div>
     </div>
   );
 };

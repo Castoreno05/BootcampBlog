@@ -17,3 +17,8 @@
   position: relative;
   top: 65%;
 }
+.penToSquare {
+  position: relative;
+  right: 3px;
+  top: 2px;
+}
