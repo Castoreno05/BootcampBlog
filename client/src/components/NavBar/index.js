@@ -1,5 +1,6 @@
 import React from "react";
 import { Nav, Navbar } from "react-bootstrap";
+import { HashRouter } from "react-router-dom";
 import Auth from "../../utils/auth";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
@@ -16,85 +17,87 @@ const logout = (event) => {
 
 function NavBar({ currentPage, handlePageChange }) {
   return (
-    <div>
-      <Navbar bg="dark" variant="dark" sticky="top" expand="xxl">
-        <Navbar.Brand>
-          <a href="https://github.com/Castoreno05/Project_3" target="_blank">
-            <img
-              src={"https://img.icons8.com/color/48/000000/github--v1.png"}
-              width="40px"
-              height="40px"
-            />{" "}
-            {""}
-          </a>
-          Bootcamp Blog
-        </Navbar.Brand>
-        <Navbar.Toggle />
-        <Navbar.Collapse>
-          <Nav>
-            <Nav.Link
-              href="/"
-              onClick={() => handlePageChange("Home")}
-              className={
-                currentPage === "Home" ? "nav-link active" : "nav-link"
-              }
-            >
-              <FontAwesomeIcon icon={faHouse}></FontAwesomeIcon> Home
-            </Nav.Link>
-            <Nav.Link
-              href="/dashboard"
-              onClick={() => handlePageChange("Dashboard")}
-              className={
-                currentPage === "Dashboard" ? "nav-link active" : "nav-link"
-              }
-            >
-              <FontAwesomeIcon icon={faClipboard}></FontAwesomeIcon> Dashboard
-            </Nav.Link>
-            <Nav.Link
-              href="/resources"
-              onClick={() => handlePageChange("Resources")}
-              className={
-                currentPage === "Resources" ? "nav-link active" : "nav-link"
-              }
-            >
-              <FontAwesomeIcon icon={faFileCode}></FontAwesomeIcon> Resources
-            </Nav.Link>
-            <Nav.Link
-              href="/login"
-              onClick={() => handlePageChange("Login")}
-              className={
-                currentPage === "Login" ? "nav-link active" : "nav-link"
-              }
-            >
-              <FontAwesomeIcon icon={faRightToBracket}></FontAwesomeIcon> Login
-            </Nav.Link>
-            <Nav.Link
-              href="/signup"
-              onClick={() => handlePageChange("SignUp")}
-              className={
-                currentPage === "SignUp" ? "nav-link active" : "nav-link"
-              }
-            >
-              <FontAwesomeIcon icon={faUserPlus}></FontAwesomeIcon> SignUp
-            </Nav.Link>
-            <Nav.Link
-              href="/logout"
-              onClick={() => handlePageChange("Logout")}
-              className={
-                currentPage === "Logout" ? "nav-link active" : "nav-link"
-              }
-            >
-              <FontAwesomeIcon icon={faLeftLong}></FontAwesomeIcon> Logout
-            </Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
-    </div>
+    <HashRouter>
+      <div>
+        <Navbar bg="dark" variant="dark" sticky="top" expand="xxl">
+          <Navbar.Brand>
+            <a href="https://github.com/Castoreno05/Project_3" target="_blank">
+              <img
+                src={"https://img.icons8.com/color/48/000000/github--v1.png"}
+                width="40px"
+                height="40px"
+              />{" "}
+              {""}
+            </a>
+            Bootcamp Blog
+          </Navbar.Brand>
+          <Navbar.Toggle />
+          <Navbar.Collapse>
+            <Nav>
+              <Nav.Link
+                href="/"
+                onClick={() => handlePageChange("Home")}
+                className={
+                  currentPage === "Home" ? "nav-link active" : "nav-link"
+                }
+              >
+                <FontAwesomeIcon icon={faHouse}></FontAwesomeIcon> Home
+              </Nav.Link>
+              <Nav.Link
+                href="/dashboard"
+                onClick={() => handlePageChange("Dashboard")}
+                className={
+                  currentPage === "Dashboard" ? "nav-link active" : "nav-link"
+                }
+              >
+                <FontAwesomeIcon icon={faClipboard}></FontAwesomeIcon> Dashboard
+              </Nav.Link>
+              <Nav.Link
+                href="/resources"
+                onClick={() => handlePageChange("Resources")}
+                className={
+                  currentPage === "Resources" ? "nav-link active" : "nav-link"
+                }
+              >
+                <FontAwesomeIcon icon={faFileCode}></FontAwesomeIcon> Resources
+              </Nav.Link>
+              <Nav.Link
+                href="/login"
+                onClick={() => handlePageChange("Login")}
+                className={
+                  currentPage === "Login" ? "nav-link active" : "nav-link"
+                }
+              >
+                <FontAwesomeIcon icon={faRightToBracket}></FontAwesomeIcon>{" "}
+                Login
+              </Nav.Link>
+              <Nav.Link
+                href="/signup"
+                onClick={() => handlePageChange("SignUp")}
+                className={
+                  currentPage === "SignUp" ? "nav-link active" : "nav-link"
+                }
+              >
+                <FontAwesomeIcon icon={faUserPlus}></FontAwesomeIcon> SignUp
+              </Nav.Link>
+              <Nav.Link
+                href="/logout"
+                onClick={() => handlePageChange("Logout")}
+                className={
+                  currentPage === "Logout" ? "nav-link active" : "nav-link"
+                }
+              >
+                <FontAwesomeIcon icon={faLeftLong}></FontAwesomeIcon> Logout
+              </Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
+      </div>
+    </HashRouter>
   );
 }
 
 export default NavBar;
-
 
 // import React from "react";
 // import "./navbar.css";
