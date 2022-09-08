@@ -5,14 +5,16 @@ import BlogList from "../BlogList/index";
 import Auth from "../../utils/auth";
 import "./homepage.css";
 
-export default function Homepage() {
+const Homepage = () => {
   const { data } = useQuery(QUERY_BLOGS);
   const blogs = data?.blogs || [];
 
   return (
     <div className="container-home">
       <BlogList blogs={blogs} title="" />
-      <section className='homepageSection'></section>
+      <section className="homepageSection"></section>
     </div>
   );
-}
+};
+
+export default Homepage;
